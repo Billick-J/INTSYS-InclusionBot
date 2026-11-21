@@ -52,7 +52,7 @@ DENSE_MIN_ANCHORED = 0.55   # lower bar when the passages mention the condition 
 NOTE_MAX = 260         # characters of a source's date_context note shown to the model
 
 # Relevance gate (calibrated on the Hunt 2020 paper; see tests/run_tests.py).
-DENSE_MIN = 0.699       # cosine similarity of the best passage (nomic-embed-text)
+DENSE_MIN = 0.65       # cosine similarity of the best passage (nomic-embed-text)
 COVERAGE_MIN = 0.60    # share of the query's keywords found in the best passage (BM25-only mode)
 
 # ---------------------------------------------------------------------------
