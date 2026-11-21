@@ -1,0 +1,120 @@
+{
+  "373662eng.pdf": {
+    "title": "Inclusive education: Children with disabilities",
+    "author": "Paula Frederica Hunt",
+    "year": "2020",
+    "publisher": "UNESCO, background paper for the 2020 Global Education Monitoring Report (ED/GEMR/MRT/2020/P1/7)",
+    "country": "International",
+    "category": "Inclusive Education",
+    "topics": [
+      "disability inclusion",
+      "inclusive education",
+      "reasonable accommodation",
+      "teacher preparation",
+      "education policy",
+      "financing"
+    ],
+    "age_group": "school-age learners",
+    "source_type": "UNESCO global background paper",
+    "date_context": "Prepared for the 2020 Global Education Monitoring Report"
+  },
+  "RA11650_IRR.txt": {
+    "title": "Implementing Rules and Regulations of Republic Act No. 11650 (Inclusive Education Act)",
+    "author": "Department of Education (DepEd)",
+    "year": "2024",
+    "publisher": "Department of Education (certified true copy, March 2025)",
+    "country": "Philippines",
+    "category": "Philippine SPED Policies",
+    "topics": [
+      "Inclusive Education Act",
+      "Inclusive Learning Resource Centers",
+      "reasonable accommodation",
+      "zero reject",
+      "learner rights",
+      "support services"
+    ],
+    "age_group": "children and learners with disabilities",
+    "source_type": "Official implementing rules and regulations",
+    "date_context": "Philippine national policy; distinguish statutory requirements from proof that a local service is operational"
+  },
+  "Guidebook_ECCD_Managing_Children_0_to_4.pdf": {
+    "title": "The Guidebook for ECCD Service Providers and Parents Managing Zero (0-) to Four (4-) Year-Old Children with Developmental Delays and Disabilities in Early Learning Programs",
+    "author": "Early Childhood Care and Development Council",
+    "year": "2021",
+    "publisher": "Early Childhood Care and Development Council",
+    "country": "Philippines",
+    "category": "Early Childhood Development",
+    "topics": [
+      "developmental milestones",
+      "early identification",
+      "developmental delays",
+      "disabilities",
+      "screening",
+      "assessment",
+      "referral",
+      "early intervention",
+      "individualized learning and development plan",
+      "family support"
+    ],
+    "age_group": "0–4 years",
+    "source_type": "Official early childhood guidebook",
+    "date_context": "Published August 2021"
+  },
+  "Special_Education_Profile_Philippines_2023.pdf": {
+    "title": "Special Education (SPED) Profile in the Philippines",
+    "author": "Congressional Policy and Budget Research Department",
+    "year": "2023",
+    "publisher": "House of Representatives, Congressional Policy and Budget Research Department",
+    "country": "Philippines",
+    "category": "Philippine SPED Services",
+    "topics": [
+      "SPED statistics",
+      "learners with exceptionalities",
+      "regional profile",
+      "mainstreaming",
+      "education services",
+      "funding"
+    ],
+    "age_group": "school-age learners",
+    "source_type": "Government research brief",
+    "date_context": "Published March 2023; several DepEd statistics refer to SY 2016–2017 and must be treated as historical"
+  },
+  "Learning_Children_Special_Needs_Inclusive_Schools_2022.pdf": {
+    "title": "Learning of Children with Special Needs in Inclusive Schools",
+    "author": "Ria Arianti, Sowiyah, Handoko, and Riswanti Rini",
+    "year": "2022",
+    "publisher": "Journal of Social Research, University of Lampung",
+    "country": "Indonesia",
+    "category": "Inclusive Education",
+    "topics": [
+      "inclusive school learning",
+      "teaching methods",
+      "learner characteristics",
+      "teacher competencies",
+      "inclusive classroom strategies"
+    ],
+    "age_group": "school-age learners",
+    "source_type": "Research literature review",
+    "date_context": "Indonesian context; not a source of Philippine law or policy"
+  },
+  "Teaching_Strategies_Learners_with_Special_Needs_2025.pdf": {
+    "title": "Teaching Strategies Applied to Learners with Special Needs in Selected Elementary Schools: Basis for Enhanced Mainstream Classroom Activities",
+    "author": "Julie Ann L. Forrosuelo",
+    "year": "2025",
+    "publisher": "Psychology and Education: A Multidisciplinary Journal, 47(8)",
+    "country": "Philippines",
+    "category": "Teaching Strategies",
+    "topics": [
+      "differentiated instruction",
+      "peer tutoring",
+      "cooperative learning",
+      "co-teaching",
+      "classroom adaptations",
+      "teacher collaboration",
+      "professional development"
+    ],
+    "age_group": "elementary school",
+    "source_type": "Quantitative descriptive research article",
+    "date_context": "Study of 30 general education teachers in one public school district in Cebu Province; findings are context-specific"
+  }
+}
