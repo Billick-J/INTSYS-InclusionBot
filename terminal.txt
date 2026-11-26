@@ -1,0 +1,6 @@
+pip install -r requirements.txt
+ollama pull llama3:8b
+ollama pull nomic-embed-text
+ollama create inclusionbot -f backend/Modelfile
+python backend/rag.py --build
+python backend/server.py

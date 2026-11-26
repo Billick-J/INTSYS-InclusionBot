@@ -1,0 +1,63 @@
+
+{
+  "InclusionBot-QA-Knowledge-Base.pdf": {
+    "title": "Inclusive education: Children with disabilities",
+    "author": "Paula Frederica Hunt",
+    "year": "2020",
+    "publisher": "UNESCO",
+    "country": "International",
+    "category": "Inclusive Education",
+    "topics": [
+      "inclusive education",
+      "rights and policies",
+      "teaching strategies",
+      "classroom support"
+    ],
+    "age_group": "school-age learners"
+  },
+  "PDF1_Comprehensive_Disability_Reference_Handbook_20_Disabilities.pdf": {
+    "title": "Comprehensive Disability Reference Handbook - Volume 1",
+    "author": "Educational reference handbook",
+    "year": "2026",
+    "publisher": "Educational synthesis",
+    "country": "International",
+    "category": "Special Education",
+    "topics": [
+      "autism",
+      "ADHD",
+      "dyslexia",
+      "dysgraphia",
+      "dyscalculia",
+      "intellectual disability",
+      "developmental disabilities",
+      "speech and language disorders",
+      "learning disabilities"
+    ],
+    "age_group": "children and school-age learners",
+    "date_context": "Educational reference, not a diagnostic manual."
+  },
+  "PDF2_Sensory_Physical_Neurological_Emotional_Health_Disabilities_Reference_Handbook.pdf": {
+    "title": "Sensory, Physical, Neurological, Emotional and Health Disabilities - Volume 2",
+    "author": "Educational reference handbook",
+    "year": "2026",
+    "publisher": "Educational synthesis",
+    "country": "International",
+    "category": "Special Education",
+    "topics": [
+      "blindness",
+      "low vision",
+      "hearing impairment",
+      "deafness",
+      "cerebral palsy",
+      "epilepsy",
+      "traumatic brain injury",
+      "spina bifida",
+      "muscular dystrophy",
+      "genetic conditions",
+      "emotional and behavioral disorders",
+      "mental health conditions"
+    ],
+    "age_group": "children and school-age learners",
+    "date_context": "Educational reference, not a diagnostic manual. Mental-health and medical conditions require appropriate professional assessment."
+  }
+}

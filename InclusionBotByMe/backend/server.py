@@ -23,7 +23,7 @@ from pathlib import Path
 import ollama
 
 import rag
-from app import MAX_TURNS, MODEL, build_system_prompt, plan, wrap
+from app import MAX_TURNS, MODEL, plan, wrap
 
 BACKEND_DIR = Path(__file__).resolve().parent
 
@@ -152,6 +152,14 @@ class Handler(SimpleHTTPRequestHandler):
                 self.wfile.flush()
         except (BrokenPipeError, ConnectionResetError):
             pass  # user closed the page or pressed Stop
+        except Exception as e:  # model failed mid-answer (e.g. Ollama crash): tell the reader
+            detail = e.error if isinstance(e, ollama.ResponseError) else "could not reach Ollama"
+            try:
+                self.wfile.write(f"\n\n(The answer was cut off - Ollama error: {detail}. "
+                                 f"Please try again.)".encode("utf-8"))
+                self.wfile.flush()
+            except (BrokenPipeError, ConnectionResetError):
+                pass
 
 
 def main():

@@ -3,11 +3,18 @@
 A question-and-answer assistant for Special Education (SPED) and Inclusive Education,
 built for teachers and parents in Baguio City, Philippines. It runs locally with Ollama
 (`llama3:8b`) and uses **Retrieval-Augmented Generation (RAG)**: every answer is taken
-from the reference document in `docs/source_documents/`, never from the model's general knowledge.
+from the **InclusionBot Q&A Knowledge Base** only, never from the model's general knowledge or
+any outside source. If the answer is not in the knowledge base, the bot says that the information
+is not covered in the knowledge base.
 
-Current reference document: *Inclusive education: Children with disabilities*
-(Paula Frederica Hunt, 2020), background paper for UNESCO's 2020 Global Education
-Monitoring Report (`docs/source_documents/373662eng.pdf`).
+Knowledge base: `docs/source_documents/InclusionBot-QA-Knowledge-Base.pdf` (the only file listed in
+`sources.json`). It has 64 question-and-answer entries in 12 categories plus a "Gaps" section listing
+what it does not cover (65 passages in the index). The `.md` copy and the original paper
+`373662eng.pdf` in the same folder are not indexed (a `[skipped]` line is printed for each).
+
+Every answer follows the matching entry: the answer, then **Real-life example**, **What to do** and
+**Important note**. Answers never say they come from a document: phrases such as "the document
+explains that ..." are rewritten as plain statements, and no titles or page numbers are shown.
 
 ## How InclusionBot answers
 
@@ -22,11 +29,11 @@ question
   │                     + rewrite as a standalone English search query
   │                       (handles follow-ups such as "give an example" and Taglish)
   │
-  ├─ 3. Retrieve ───── hybrid search over 206 document passages
+  ├─ 3. Retrieve ───── hybrid search over 65 knowledge-base passages
   │                     (BM25 keywords + nomic-embed-text vectors, Reciprocal Rank Fusion)
   │
   ├─ 4. Gate ───────── off-topic ─────────────────────► polite refusal (no answer, not even partly)
-  │                     on-topic but nothing relevant ─► "my reference document doesn't cover this"
+  │                     on-topic but nothing relevant ─► "not covered in my knowledge base"
   │
   └─ 5. Generate ───── model answers ONLY from the top 5 passages, in plain words
                         (no passage numbers, sections or page numbers)
@@ -85,18 +92,33 @@ The first start builds the document index (about a minute). Press **Ctrl + C** t
 
 ## Changing or adding reference documents
 
+Only documents about **Special Education (SPED) or Inclusive Education** may be added.
+
 1. Put the PDF (or `.txt` / `.md`) file in `docs/source_documents/`.
-2. Add its title, author and year to `docs/source_documents/sources.json` (shown in citations).
+2. Add its title, author, year, country and `category` to `docs/source_documents/sources.json`.
+   The category must be one of `SPED_CATEGORIES` in `backend/rag.py` (Special Education, Inclusive
+   Education, Philippine SPED Policies, Philippine SPED Services, Teaching Strategies, Early Childhood
+   Development). A file that is not listed, or has another category, is **not indexed** and a
+   `[skipped]` warning is printed.
 3. Restart the app. The index is rebuilt automatically when a document changes.
 
 Chapters, sections and pages are still recorded in the index (shown by `rag.py --search`),
 but answers no longer show them.
 
+**Q&A knowledge-base files** (`.pdf` or `.md`) are split differently from other PDFs. A PDF with
+`Question:` entries is first turned back into lines (running page headers removed, wrapped lines
+joined, category headings taken from its "Categories" list). Then every `Question:` entry up to the next `---` is one passage,
+the `# N. Category` heading above it is its chapter, the `Related Questions` list is left out, and
+the pages in its `Source/Reference: ... Location in document:` line are recorded but not shown to
+the model. A section with no `Question:` entries (the "Gaps" section) is one passage. Older files
+that use `### ` headings are still supported. Long entries are split at paragraph breaks.
+
 ## School-specific information
 
-The reference document is an international paper: it does not describe this school's own
-enrollment steps, fees, services or contacts. Questions about those get a reply telling the
-user to contact the school's SPED department.
+The knowledge base comes from an international paper: it does not describe this school's own
+enrollment steps, fees, services or contacts, or where SPED centers are. Questions about those
+get a reply saying the information is not covered in the knowledge base and telling the user to
+contact the school's SPED department (no outside links or addresses).
 
 ## Voice features (web chat)
 

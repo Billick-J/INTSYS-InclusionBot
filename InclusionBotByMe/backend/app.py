@@ -62,7 +62,10 @@ def plan(user_text, history, system_prompt=None):
     """Run the RAG steps (guards, router, retrieval, relevance gate). Returns a rag.Plan."""
     if system_prompt is None:
         system_prompt = build_system_prompt()
-    return rag.plan_reply(user_text, prompt_history(history), MODEL, system_prompt)
+    # The model sees only recent turns, but "was an off-topic question already declined?" is
+    # checked over the whole conversation the app still holds.
+    return rag.plan_reply(user_text, prompt_history(history), MODEL, system_prompt,
+                          already_declined=rag.declined_before(history))
 
 
 def ask(system_prompt, history, user_text, stream=False):
